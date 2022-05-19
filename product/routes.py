@@ -1,5 +1,4 @@
 from flask import request, jsonify
-import pymongo.errors as errors
 from product import products
 from app import db
 from bson.objectid import ObjectId

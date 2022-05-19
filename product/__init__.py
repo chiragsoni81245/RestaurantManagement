@@ -1,5 +1,4 @@
-from itertools import product
-from flask import Blueprint, render_template, abort
+from flask import Blueprint
 
 
 products = Blueprint('products', __name__)
