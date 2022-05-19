@@ -26,7 +26,7 @@ def create_product():
 	}), 201
 
 @products.route('/<id>', methods=["PUT"])
-def update_product(id: int):
+def update_product(id):
 	update_payload = request.json
 	products_c.update_one({ "_id": ObjectId(id) }, {
 		"$set": update_payload
@@ -36,7 +36,7 @@ def update_product(id: int):
 	})
 
 @products.route('/<id>', methods=["DELETE"])
-def delete_product(id: int):
+def delete_product(id):
 	products_c.delete_one({ "_id": ObjectId(id) })
 	return jsonify({
 		"msg": "Success"
