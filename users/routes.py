@@ -45,7 +45,7 @@ def delete_product(id):
 
 @users.route('/<id>/orders', methods=["GET"])
 def get_my_orders(id):
-	orders = list(orders_c.find({ "userId": id }))
+	orders = list(orders_c.find({ "userId": id }, {'_id': 1, 'products': 1}))
 	final_orders = [ ]
 	for order in orders:
 		order["_id"] = str(order["_id"])
